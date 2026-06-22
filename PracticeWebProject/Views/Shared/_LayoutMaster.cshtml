@@ -4,33 +4,93 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/css/style.css" rel="stylesheet" />
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Logo </h1>
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="#">
+                Logo
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                    aria-controls="navbarContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/guest/home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/guest/aboutus">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/guest/services">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/guest/gallery">Gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/guest/contactus">Contact Us</a>
+                    </li>
+
+                </ul>
+
+                <!-- Right Side Buttons -->
+                <ul class="navbar-nav">
+
+                    <li class="nav-item me-2">
+                        <a class="btn btn-light" href="#">
+                            Sign Up
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="#">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
-        <div class="menu">
-            <ul>
-                <li><a href="/guest/home">Home</a></li>
-                <li><a href="/guest/aboutus">About Us</a></li>
-                <li><a href="/guest/services">Services</a></li>
-                <li><a href="/guest/gallery">Gallery</a></li>
-                <li><a href="/guest/contactus">Contact Us</a></li>
-            </ul>
-        </div>
-    </header>
-    <div id="middlePart">
+    </nav>
+</header>
+    <div class="container-fluid bg-secondary">
         @RenderBody()
+        <br />
     </div>
-    <footer>
-        <div class="footerpart">
-            <h3>About Us</h3>
+    <footer class="container-fluid bg-success mb-0">
+
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>About Us</h3>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software including versions of Lorem Ipsum.</p>
-        </div>
-        <div class="footerpart">
-          <h3>Main Menu</h3>
+            </div>
+            <div class="col-sm-4">
+                <h3>Main Menu</h3>
             <ul>
                 <li><a href="/guest/home">Home</a></li>
                 <li><a href="/guest/aboutus">About Us</a></li>
@@ -38,10 +98,12 @@
                 <li><a href="/guest/gallery">Gallery</a></li>
                 <li><a href="/guest/contactus">Contact Us</a></li>
             </ul>
-        </div>
-        <div class="footerpart">
-          <h3>Social Icons</h3>
+            </div>
+            <div class="col-sm-4">
+                <h3>Social Icons</h3>
+            </div>
         </div>
     </footer>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
