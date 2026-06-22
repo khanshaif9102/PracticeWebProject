@@ -14,20 +14,32 @@ header {
 }
 .logo {
     float: left;
-    width:40%;
+    width:30%;
 }
 .menu {
     float: right;
-    width:60%;
+    width: 70%;
+    padding-top: 15px;
 }
 .menu ul li{
       display:inline-block;
+      border-radius:10px;
       margin-left:20px;
-
+      background-color:gray;
+      width:150px;
+      height:30px;
+      text-align:center;
 }
-.menu ul li a{
+
+.menu ul li:hover{
+       background-color:black;
        color:white;
-       font-size:20px;
+}
+
+.menu ul li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
 }
 #middlePart {
     height: 400px;
@@ -42,7 +54,7 @@ footer {
 .footerpart
 {
     float:left;
-    width:33%;
+    width:30%;
     height:100%;
-    border:1px solid red;
+    margin-left:20px;
 }
