@@ -1,0 +1,75 @@
+@model PracticeWebProject.Models.SI
+
+@{
+    ViewData["Index"] = "Simple Interest Calculator";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white text-center py-3">
+                    <h3 class="mb-0">Simple Interest Calculator</h3>
+                </div>
+                
+                <div class="card-body p-4 bg-light">
+                    <form asp-action="Index" method="post">
+                        
+                        <div class="mb-3">
+                            <label asp-for="_p" class="form-label fw-bold">Principal Amount ($)</label>
+                            <input asp-for="_p" class="form-control" placeholder="Enter principal amount (e.g., 5000)" required type="number" step="any" />
+                            <span asp-validation-for="_p" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="_r" class="form-label fw-bold">Rate of Interest (%)</label>
+                            <input asp-for="_r" class="form-control" placeholder="Enter annual interest rate (e.g., 7.5)" required type="number" step="any" />
+                            <span asp-validation-for="_r" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="_t" class="form-label fw-bold">Time Period (Years)</label>
+                            <input asp-for="_t" class="form-control" placeholder="Enter time in years (e.g., 3)" required type="number" step="any" />
+                            <span asp-validation-for="_t" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg">Calculate Interest</button>
+                            <button type="reset" class="btn btn-outline-secondary">Clear Form</button>
+                        </div>
+
+                    </form>
+                    <p>
+                        @ViewBag.Result
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        function resetForm() {
+            var form = document.getElementById("siForm");
+            form.reset();
+
+            var resultAlert = document.getElementById("resultAlert");
+            if (resultAlert) {
+                resultAlert.style.display = "none";
+            }
+            
+            var errorMessages = document.querySelectorAll('.text-danger');
+            errorMessages.forEach(function(span) {
+                span.innerText = "";
+            });
+        }
+    </script>
+}
